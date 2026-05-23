@@ -104,7 +104,6 @@ export default function PortfolioPage() {
                   fontSize: '0.6875rem',
                   letterSpacing: '0.15em',
                   color: active === cat ? 'var(--paper)' : 'var(--ash)',
-                  borderBottom: active === cat ? '1px solid var(--paper)' : '1px solid transparent',
                   marginBottom: '-1px',
                   background: 'none',
                   border: 'none',
