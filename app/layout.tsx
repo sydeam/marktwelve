@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { ThemeProvider } from 'next-themes'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
-import ExitIntentBanner from '@/components/ExitIntentBanner'
+// import ExitIntentBanner from '@/components/ExitIntentBanner'
 import WhatsAppFloat from '@/components/WhatsAppFloat'
 import CustomCursor from '@/components/CustomCursor'
 import '../styles/globals.css'
@@ -143,7 +143,7 @@ export default function RootLayout({
           disableTransitionOnChange={false}
         >
           <CustomCursor />
-          <ExitIntentBanner />
+          {/* <ExitIntentBanner /> */}
           <Navbar />
           <main>{children}</main>
           <Footer />
