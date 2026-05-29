@@ -129,7 +129,7 @@ export default function Navbar() {
                 rounded-full
                 px-5 py-2.5
                 text-sm font-medium
-                bg-orange-500
+                bg-[#C84B30]
                 text-white
                 hover:bg-orange-400
                 transition-all duration-300
