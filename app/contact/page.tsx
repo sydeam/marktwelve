@@ -3,9 +3,9 @@ import { MapPin, Mail, Phone, Instagram, ArrowRight } from 'lucide-react'
 import ContactForm from '@/components/ContactForm'
 
 export const metadata: Metadata = {
-  title: 'Book a Strategy Call | Mark Twelve',
+  title: 'Say Hello | Mark Twelve',
   description:
-    "Begin your brand's next chapter. Initiate contact with Mark Twelve for a strategy consultation.",
+    "Tell us what your mark should look like. Let's start a conversation.",
   alternates: { canonical: 'https://marktwelve.in/contact' },
 }
 
@@ -30,9 +30,7 @@ export default function ContactPage() {
               animation: 'fadeUp 0.8s ease 0.1s both',
             }}
           >
-            The Beginning of Your
-            <br />
-            Brand&apos;s Next Chapter.
+            To Say Hello.
           </h1>
           <p
             className="font-body leading-relaxed"
@@ -43,8 +41,7 @@ export default function ContactPage() {
               animation: 'fadeUp 0.8s ease 0.25s both',
             }}
           >
-            We partner with elite founders and C-suite executives to build enduring brand
-            architectures. For high-value curation and precision strategy, initiate contact below.
+            Tell us what your mark should look like — and win our hearts. We&apos;ll get back to you faster than you think.
           </p>
         </div>
       </section>
