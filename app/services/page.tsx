@@ -1,87 +1,18 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { Search, Diamond, User, Megaphone, Film, Filter } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
+import { services } from './service-data'
 
 export const metadata: Metadata = {
-  title: 'Services | Full-Spectrum Digital Growth — Mark Twelve',
+  title: 'Services | Full-Spectrum Digital Growth - Mark Twelve',
   description:
-    'From SEO architecture to cinematic brand narratives — Mark Twelve offers precision-engineered digital services for market-leading brands.',
+    'Video production, digital marketing, branding, and photography for brands ready to leave a lasting mark.',
   alternates: { canonical: 'https://marktwelve.in/services' },
 }
-
-const services = [
-  {
-    num: '01',
-    icon: Search,
-    name: 'SEO Architecture',
-    desc: 'Dominating search landscapes through technical precision and authoritative content structures.',
-    deliverables: [
-      'Technical Audits & Remediation',
-      'High-Intent Keyword Mapping',
-      'Authority Building Strategies',
-    ],
-  },
-  {
-    num: '02',
-    icon: Diamond,
-    name: 'Brand Identity',
-    desc: 'Crafting visual and verbal identities that communicate quiet luxury and unassailable authority.',
-    deliverables: [
-      'Visual System Design',
-      'Tone of Voice & Messaging',
-      'Brand Guidelines & Asset Creation',
-    ],
-  },
-  {
-    num: '03',
-    icon: User,
-    name: 'Executive Presence',
-    desc: 'Elevating founders and C-suite leaders into industry luminaries through strategic positioning.',
-    deliverables: [
-      'Thought Leadership Roadmaps',
-      'LinkedIn Optimization',
-      'Speaking Engagement Strategy',
-    ],
-  },
-  {
-    num: '04',
-    icon: Megaphone,
-    name: 'Precision Acquisition',
-    desc: 'Deploying capital with surgical accuracy across premium digital placements. Meta Ads, Google Ads.',
-    deliverables: [
-      'Multi-Channel Media Buying',
-      'High-Ticket Lead Generation',
-      'Advanced Retargeting Ecosystems',
-    ],
-  },
-  {
-    num: '05',
-    icon: Film,
-    name: 'Cinematic Narratives',
-    desc: "Editorial-quality video production that captures the essence of your brand's luxury.",
-    deliverables: [
-      'Brand Films & Documentaries',
-      'Micro-Content for Social',
-      'Premium Art Direction',
-    ],
-  },
-  {
-    num: '06',
-    icon: Filter,
-    name: 'Conversion Architecture',
-    desc: 'Designing frictionless pathways that guide elite prospects from awareness to commitment.',
-    deliverables: [
-      'High-Converting Landing Pages',
-      'Automated Email Sequences',
-      'Frictionless Checkout Experiences',
-    ],
-  },
-]
 
 export default function ServicesPage() {
   return (
     <>
-      {/* ─── HERO ─── */}
       <section
         className="grain relative"
         style={{
@@ -96,9 +27,9 @@ export default function ServicesPage() {
               className="font-display font-light tracking-tight leading-none mb-6"
               style={{ fontSize: 'clamp(3rem, 7vw, 6rem)', color: 'var(--paper)' }}
             >
-              Full-Spectrum Growth
+              Services That
               <br />
-              Strategy
+              Leave a Mark
             </h1>
           </div>
           <p
@@ -106,34 +37,50 @@ export default function ServicesPage() {
             style={{
               color: 'var(--smoke)',
               fontSize: '1.0625rem',
-              maxWidth: '540px',
+              maxWidth: '620px',
               animation: 'fadeUp 0.8s ease 0.25s both',
             }}
           >
-            Precision and high-value curation applied to every facet of your brand&apos;s digital
-            ecosystem. We architect strategies that demand attention and drive definitive action.
+            We fuse video, digital marketing, branding, and photography into a single system of
+            authority. Each service is built with the same restraint, precision, and commercial
+            clarity that defines the Mark Twelve experience.
           </p>
         </div>
       </section>
 
-      {/* ─── SERVICES GRID ─── */}
       <section className="section-pad" style={{ background: 'var(--void)' }}>
         <div className="container-narrow">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map(({ num, icon: Icon, name, desc, deliverables }) => (
-              <article key={num} className="service-card flex flex-col">
-                {/* Card number */}
+          <div className="max-w-3xl mb-16">
+            <p
+              className="uppercase tracking-[0.18em] text-xs mb-4"
+              style={{ color: 'var(--signal)' }}
+            >
+              Core Services
+            </p>
+            <h2
+              className="font-display"
+              style={{
+                fontSize: 'clamp(2rem, 4vw, 3.6rem)',
+                color: 'var(--paper)',
+                lineHeight: 1.05,
+              }}
+            >
+              Four ways to sharpen
+              <br />
+              the way your market sees you.
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {services.map(({ slug, icon: Icon, name, shortIntro, offerings }, index) => (
+              <article key={slug} className="service-card flex flex-col">
                 <div className="flex items-start justify-between mb-6">
-                  <Icon
-                    size={20}
-                    style={{ color: 'var(--signal)' }}
-                    aria-hidden="true"
-                  />
+                  <Icon size={20} style={{ color: 'var(--signal)' }} aria-hidden="true" />
                   <span
                     className="font-body tabular-nums"
                     style={{ fontSize: '0.75rem', color: 'var(--ash)', letterSpacing: '0.1em' }}
                   >
-                    {num}
+                    {String(index + 1).padStart(2, '0')}
                   </span>
                 </div>
 
@@ -147,26 +94,26 @@ export default function ServicesPage() {
                   className="font-body mb-6 flex-1"
                   style={{ color: 'var(--smoke)', fontSize: '0.875rem', lineHeight: 1.65 }}
                 >
-                  {desc}
+                  {shortIntro}
                 </p>
 
                 <ul className="space-y-2 mb-8">
-                  {deliverables.map((d) => (
+                  {offerings.map((offering) => (
                     <li
-                      key={d}
+                      key={offering.title}
                       className="flex items-start gap-2 font-body"
                       style={{ color: 'var(--smoke)', fontSize: '0.8125rem' }}
                     >
                       <span style={{ color: 'var(--signal)', marginTop: '1px', flexShrink: 0 }}>
-                        ✓
+                        +
                       </span>
-                      {d}
+                      {offering.title}
                     </li>
                   ))}
                 </ul>
 
                 <Link
-                  href="/contact"
+                  href={`/services/${slug}`}
                   className="font-body flex items-center gap-2 cursor-none group"
                   style={{
                     fontSize: '0.75rem',
@@ -175,12 +122,12 @@ export default function ServicesPage() {
                     color: 'var(--smoke)',
                   }}
                 >
-                  Learn More
+                  Explore Service
                   <span
                     className="transition-transform group-hover:translate-x-1"
                     style={{ display: 'inline-block' }}
                   >
-                    →
+                    <ArrowRight size={13} />
                   </span>
                 </Link>
               </article>
@@ -189,7 +136,6 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* ─── CTA ─── */}
       <section className="section-pad" style={{ background: 'var(--pitch)' }}>
         <div className="container-narrow text-center">
           <h2
@@ -210,3 +156,4 @@ export default function ServicesPage() {
     </>
   )
 }
+
