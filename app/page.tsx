@@ -10,7 +10,10 @@ import {
   Target,
   Camera,
   Sparkles,
+  Film,
+  Gem,
 } from 'lucide-react'
+import { ProcessCard } from '@/components/ProcessCards'
 
 export const metadata: Metadata = {
   title: 'Mark Twelve | Leave Your Mark',
@@ -20,22 +23,32 @@ export const metadata: Metadata = {
 
 const services = [
   {
-    icon: Camera,
-    title: 'The Visual Mark',
+    icon: Film,
+    title: 'Video Mark',
     category: 'Video Production',
-    desc: 'We capture raw, high-definition, real-time stories that align perfectly with your goals and audience.',
-  },
-  {
-    icon: Sparkles,
-    title: 'The Authority Mark',
-    category: 'Personal Branding',
-    desc: 'Turning your unique brand journey into a market presence that commands attention and trust.',
+    slug: 'Video-Mark',
+    desc: 'We don\'t just capture frames; we capture momentum. From raw founder documentaries to high-definition commercial ad films, we build the visual assets and sharp social hooks that stop the scroll.',
   },
   {
     icon: Target,
-    title: 'The Digital Mark',
+    title: 'Digital Mark',
     category: 'Digital Marketing',
-    desc: 'Smart, targeted distribution that places your message directly in front of the right audience.',
+    slug: 'Digital-Marketing',
+    desc: 'Distribution is everything, and vanity metrics are a waste of time. We deploy smart, data-driven performance marketing frameworks that stamp your message in front of the audience that moves the needle.',
+  },
+  {
+    icon: Gem,
+    title: 'Branding Mark',
+    category: 'Branding',
+    slug: 'Branding-Mark',
+    desc: 'A lasting mark isn\'t built by chasing trends; it\'s built on genuine authority. We craft timeless visual identities, sleek packaging frameworks, and commanding narratives that position you as the obvious premium choice.',
+  },
+  {
+    icon: Camera,
+    title: 'Photography Mark',
+    category: 'Photography',
+    slug: 'Photography-Mark',
+    desc: 'We don\'t just take pictures, we capture your brand\'s premium identity. From high-end corporate portraits to cinematic product frames, we deliver sharp, pristine visual assets that command instant respect.',
   },
 ]
 
@@ -83,66 +96,83 @@ const cases = [
 export default function HomePage() {
   return (
     <>
-      {/* HERO */}
+      {/* HERO — MINIMAL PREMIUM REDESIGN */}
       <section
-        className="grain relative min-h-[88vh] flex items-center overflow-hidden"
+        className="grain relative min-h-[92vh] flex items-center overflow-hidden"
         style={{ background: 'var(--void)' }}
       >
-        <div className="container-narrow relative z-10 py-28 md:py-32 grid md:grid-cols-[1.15fr_0.85fr] gap-12 lg:gap-16 items-center">
+        <div className="container-narrow relative z-10 py-24 md:py-32 grid md:grid-cols-[1.2fr_0.8fr] gap-12 lg:gap-20 items-center">
+          {/* Left Column */}
           <div>
+            {/* Tagline */}
             <p
-              className="mb-5 uppercase tracking-[0.2em] text-xs"
-              style={{ color: 'var(--signal)' }}
+              className="mb-8 uppercase tracking-[0.25em] text-xs font-medium"
+              style={{ color: 'var(--signal)', animation: 'fadeUp 0.8s ease-out 0.1s both' }}
             >
               Mark Twelve
             </p>
 
+            {/* Headline - Emotionally Engaging */}
             <h1
-              className="font-display leading-none mb-8"
+              className="font-display leading-tight"
               style={{
-                fontSize: 'clamp(2.55rem, 6vw, 5.35rem)',
+                fontSize: 'clamp(2.75rem, 7vw, 5.2rem)',
                 color: 'var(--paper)',
                 fontWeight: 300,
-                lineHeight: 0.98,
+                lineHeight: 1.05,
+                letterSpacing: '-0.02em',
+                animation: 'fadeUp 0.8s ease-out 0.25s both',
               }}
             >
-              We decoded
-              <br />
-              &ldquo;the mark,&rdquo;
-              <br />
-              and found it
-              <br />
-              never actually
-              <br />
-              had a shape.
+              What if your brand&rsquo;s greatest mark{' '}
+              <span style={{ color: 'var(--signal)' }}>was never meant</span>{' '}
+              to be seen, only felt?
             </h1>
           </div>
 
-          <div className="max-w-xl md:ml-auto">
+          {/* Right Column */}
+          <div className="max-w-xl">
+            {/* Supporting Copy - Challenge */}
             <p
-              className="leading-relaxed mb-10"
+              className="leading-relaxed mb-4"
               style={{
                 color: 'var(--smoke)',
-                fontSize: '1rem',
+                fontSize: 'clamp(0.95rem, 2vw, 1.05rem)',
+                lineHeight: 1.75,
+                animation: 'fadeUp 0.8s ease-out 0.4s both',
               }}
             >
-              If you know what your mark should look like,
-              tell us to win our hearts - and get a free
-              Instagram audit.
+              We decoded &ldquo;the mark,&rdquo; and found it never actually had a shape.
+            </p>
+            <p
+              className="leading-relaxed mb-8"
+              style={{
+                color: 'var(--smoke)',
+                fontSize: 'clamp(0.95rem, 2vw, 1.05rem)',
+                lineHeight: 1.75,
+                animation: 'fadeUp 0.8s ease-out 0.45s both',
+              }}
+            >
+              If you know what your mark should look like, tell us to win our hearts — and get a free Instagram audit.
             </p>
 
-            <Link href="/contact" className="btn-primary">
-              Take The Challenge
-              <ArrowRight size={16} />
-            </Link>
+            {/* CTA */}
+            <div style={{ animation: 'fadeUp 0.8s ease-out 0.55s both' }}>
+              <Link href="/contact" className="btn-primary">
+                Take the Challenge
+                <ArrowRight size={16} strokeWidth={2.5} />
+              </Link>
+            </div>
           </div>
         </div>
 
+        {/* Scroll Indicator */}
         <div
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-scroll-bounce"
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 animate-scroll-bounce"
           style={{ color: 'var(--ash)' }}
         >
-          <ArrowDown size={16} />
+          <span className="text-xs uppercase tracking-[0.1em] opacity-60">Scroll</span>
+          <ArrowDown size={18} strokeWidth={1.5} />
         </div>
       </section>
 
@@ -187,7 +217,7 @@ export default function HomePage() {
               </p>
             </div>
 
-            <Link href="/about" className="btn-outline">
+            <Link href="/about" className="btn-primary">
               Know Our Story
             </Link>
           </div>
@@ -224,8 +254,8 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {services.map(({ icon: Icon, title, category, desc }) => (
+          <div className="grid md:grid-cols-2 gap-8">
+            {services.map(({ icon: Icon, title, category, slug, desc }) => (
               <article key={title} className="service-card group">
                 <Icon
                   size={22}
@@ -255,10 +285,27 @@ export default function HomePage() {
                     color: 'var(--smoke)',
                     lineHeight: 1.8,
                     fontSize: '0.95rem',
+                    marginBottom: '1.5rem',
                   }}
                 >
                   {desc}
                 </p>
+
+                <Link
+                  href={`/services/${slug}`}
+                  className="font-body flex items-center gap-2 group"
+                  style={{
+                    fontSize: '0.75rem',
+                    letterSpacing: '0.1em',
+                    textTransform: 'uppercase',
+                    color: 'var(--smoke)',
+                  }}
+                >
+                  Explore Service
+                  <span className="transition-transform group-hover:translate-x-1" style={{ display: 'inline-block' }}>
+                    <ArrowRight size={13} />
+                  </span>
+                </Link>
               </article>
             ))}
           </div>
@@ -302,34 +349,7 @@ export default function HomePage() {
 
           <div className="grid md:grid-cols-2 gap-10">
             {process.map(({ step, title, desc }) => (
-              <div key={step} className="border-t pt-6 border-white/10">
-                <p
-                  className="mb-4 text-xs tracking-[0.2em]"
-                  style={{ color: 'var(--signal)' }}
-                >
-                  {step}
-                </p>
-
-                <h3
-                  className="font-display mb-4"
-                  style={{
-                    fontSize: '1.55rem',
-                    color: 'var(--paper)',
-                    lineHeight: 1.15,
-                  }}
-                >
-                  {title}
-                </h3>
-
-                <p
-                  style={{
-                    color: 'var(--smoke)',
-                    lineHeight: 1.8,
-                  }}
-                >
-                  {desc}
-                </p>
-              </div>
+              <ProcessCard key={step} step={step} title={title} desc={desc} />
             ))}
           </div>
 
@@ -346,7 +366,7 @@ export default function HomePage() {
             </h3>
 
             <p className="mb-8" style={{ color: 'var(--smoke)' }}>
-              Say hello! (Or &ldquo;hai.&rdquo; We speak both.)
+              Say hello! (Or &ldquo;hey.&rdquo; We speak both.)
             </p>
 
             <Link href="/contact" className="btn-primary">
@@ -481,29 +501,41 @@ export default function HomePage() {
             className="mt-12 border border-white/10 p-8 md:p-12"
             style={{ background: 'var(--pitch)' }}
           >
-            <p
-              className="leading-[2.8]"
-              style={{
-                color: 'var(--paper)',
-                fontSize: 'clamp(1rem, 1.8vw, 1.12rem)',
-              }}
-            >
-              Hello/Hii,
-              <br />
-              Your name is
-              <input className="inline-input" />.
-              An email we can contact you at is
-              <input className="inline-input" />.
-              The company you associate with is called
-              <input className="inline-input" />.
-              If you know what your mark should look like,
-              it would be
-              <input className="inline-input large" />.
-            </p>
+            <div className="grid md:grid-cols-[1fr_auto] gap-12 items-start">
+              <div>
+                <p
+                  className="leading-[2.8]"
+                  style={{
+                    color: 'var(--paper)',
+                    fontSize: 'clamp(1rem, 1.8vw, 1.12rem)',
+                  }}
+                >
+                  Hello/Hii,
+                  <br />
+                  Your name is
+                  <input className="inline-input" />.
+                  An email we can contact you at is
+                  <input className="inline-input" />.
+                  The company you associate with is called
+                  <input className="inline-input" />.
+                  If you know what your mark should look like,
+                  it would be
+                  <input className="inline-input large" />.
+                </p>
 
-            <button className="btn-primary mt-10">
-              Send Message
-            </button>
+                <button className="btn-primary mt-10">
+                  Send Message
+                </button>
+              </div>
+
+              <div className="flex justify-center">
+                <img
+                  src="/LogoDark.png"
+                  alt="Mark Twelve Logo"
+                  className="max-w-[200px]  w-full"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
