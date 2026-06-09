@@ -10,6 +10,8 @@ import {
   Target,
   Camera,
   Sparkles,
+  Film,
+  Gem,
 } from 'lucide-react'
 import { ProcessCard } from '@/components/ProcessCards'
 import ThemedLogo from '@/components/ThemedLogo'
@@ -22,22 +24,32 @@ export const metadata: Metadata = {
 
 const services = [
   {
-    icon: Camera,
-    title: 'The Visual Mark',
+    icon: Film,
+    title: 'Video Mark',
     category: 'Video Production',
-    desc: 'We capture raw, high-definition, real-time stories that align perfectly with your goals and audience.',
-  },
-  {
-    icon: Sparkles,
-    title: 'The Authority Mark',
-    category: 'Personal Branding',
-    desc: 'Turning your unique brand journey into a market presence that commands attention and trust.',
+    slug: 'Video-Mark',
+    desc: 'We don\'t just capture frames; we capture momentum. From raw founder documentaries to high-definition commercial ad films, we build the visual assets and sharp social hooks that stop the scroll.',
   },
   {
     icon: Target,
-    title: 'The Digital Mark',
+    title: 'Digital Mark',
     category: 'Digital Marketing',
-    desc: 'Smart, targeted distribution that places your message directly in front of the right audience.',
+    slug: 'Digital-Marketing',
+    desc: 'Distribution is everything, and vanity metrics are a waste of time. We deploy smart, data-driven performance marketing frameworks that stamp your message in front of the audience that moves the needle.',
+  },
+  {
+    icon: Gem,
+    title: 'Branding Mark',
+    category: 'Branding',
+    slug: 'Branding-Mark',
+    desc: 'A lasting mark isn\'t built by chasing trends; it\'s built on genuine authority. We craft timeless visual identities, sleek packaging frameworks, and commanding narratives that position you as the obvious premium choice.',
+  },
+  {
+    icon: Camera,
+    title: 'Photography Mark',
+    category: 'Photography',
+    slug: 'Photography-Mark',
+    desc: 'We don\'t just take pictures, we capture your brand\'s premium identity. From high-end corporate portraits to cinematic product frames, we deliver sharp, pristine visual assets that command instant respect.',
   },
 ]
 
@@ -121,9 +133,9 @@ export default function HomePage() {
 
           {/* Right Column */}
           <div className="max-w-xl">
-            {/* Supporting Copy - Premium Positioning */}
+            {/* Supporting Copy - Challenge */}
             <p
-              className="leading-relaxed mb-8"
+              className="leading-relaxed mb-4"
               style={{
                 color: 'var(--smoke)',
                 fontSize: 'clamp(0.95rem, 2vw, 1.05rem)',
@@ -131,13 +143,24 @@ export default function HomePage() {
                 animation: 'fadeUp 0.8s ease-out 0.4s both',
               }}
             >
-             We Decoded the "Mark" and found it never actually had a shape 
+              We decoded &ldquo;the mark,&rdquo; and found it never actually had a shape.
+            </p>
+            <p
+              className="leading-relaxed mb-8"
+              style={{
+                color: 'var(--smoke)',
+                fontSize: 'clamp(0.95rem, 2vw, 1.05rem)',
+                lineHeight: 1.75,
+                animation: 'fadeUp 0.8s ease-out 0.45s both',
+              }}
+            >
+              If you know what your mark should look like, tell us to win our hearts and get a free Instagram audit.
             </p>
 
             {/* CTA */}
             <div style={{ animation: 'fadeUp 0.8s ease-out 0.55s both' }}>
               <Link href="/contact" className="btn-primary">
-                Start Your Journey
+                Take the Challenge
                 <ArrowRight size={16} strokeWidth={2.5} />
               </Link>
             </div>
@@ -232,8 +255,8 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {services.map(({ icon: Icon, title, category, desc }) => (
+          <div className="grid md:grid-cols-2 gap-8">
+            {services.map(({ icon: Icon, title, category, slug, desc }) => (
               <article key={title} className="service-card group">
                 <Icon
                   size={22}
@@ -263,10 +286,27 @@ export default function HomePage() {
                     color: 'var(--smoke)',
                     lineHeight: 1.8,
                     fontSize: '0.95rem',
+                    marginBottom: '1.5rem',
                   }}
                 >
                   {desc}
                 </p>
+
+                <Link
+                  href={`/services/${slug}`}
+                  className="font-body flex items-center gap-2 group"
+                  style={{
+                    fontSize: '0.75rem',
+                    letterSpacing: '0.1em',
+                    textTransform: 'uppercase',
+                    color: 'var(--smoke)',
+                  }}
+                >
+                  Explore Service
+                  <span className="transition-transform group-hover:translate-x-1" style={{ display: 'inline-block' }}>
+                    <ArrowRight size={13} />
+                  </span>
+                </Link>
               </article>
             ))}
           </div>
