@@ -321,38 +321,91 @@ h1, h2, h3, h4, h5, h6 {
 /* =============================================
    CARD STYLES
    ============================================= */
+/* PREMIUM TOP → BOTTOM FILL WITH SUBTLE BOUNCE */
 
-.service-card {
+.service-card-hover {
+  display: flex;
+  flex-direction: column;
   background: var(--pitch);
   border: 1px solid rgba(85, 85, 85, 0.3);
   padding: 2rem 1.75rem;
   position: relative;
   overflow: hidden;
-  transition: transform 0.3s ease, border-color 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
+
+  transition:
+    border-color 0.5s ease,
+    transform 0.5s ease;
 }
 
-.service-card::before {
-  content: '';
+.service-card-hover:hover {
+  border-color: var(--signal);
+  animation: cardBounce 0.65s ease-out;
+}
+
+/* Overlay bounce animation */
+@keyframes overlayEnter {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  70% {
+    transform: translateY(0%);
+  }
+
+  85% {
+    transform: translateY(-10%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Card bounce animation */
+@keyframes cardBounce {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
+
+  75% {
+    transform: translateY(-2px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Overlay layer */
+.service-card-overlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
+  inset: 0;
   background: var(--signal);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.35s ease;
+  transform: translateY(-100%);
+  z-index: 1;
+  pointer-events: none;
+  will-change: transform;
 }
 
-.service-card:hover {
-  transform: translateY(-4px);
-  border-color: rgba(85, 85, 85, 0.5);
+/* Trigger overlay animation on hover */
+.service-card-hover:hover .service-card-overlay {
+  animation: overlayEnter 0.65s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
-.service-card:hover::before {
-  transform: scaleX(1);
+/* Content stays above overlay */
+.service-card-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
-
 /* =============================================
    PORTFOLIO CARD
    ============================================= */
@@ -536,7 +589,13 @@ footer {
   color: var(--signal);
   margin: 0 0.4rem;
   min-width: 180px;
-  padding: 0.2rem 0;
+  /* Sit exactly on the text baseline */
+  vertical-align: baseline;
+  padding: 0 0 0.15rem 0;
+  /* Match the surrounding text size & line-height */
+  font-size: inherit;
+  line-height: inherit;
+  font-family: inherit;
 }
 
 .inline-input.large {
@@ -553,7 +612,8 @@ footer {
     padding-bottom: 4rem;
   }
 
-  .service-card {
+  .service-card,
+  .service-card-hover {
     padding: 1.75rem 1.5rem;
   }
 

@@ -12,6 +12,7 @@ import {
   Sparkles,
 } from 'lucide-react'
 import { ProcessCard } from '@/components/ProcessCards'
+import ThemedLogo from '@/components/ThemedLogo'
 
 export const metadata: Metadata = {
   title: 'Mark Twelve | Leave Your Mark',
@@ -489,11 +490,7 @@ export default function HomePage() {
               </div>
 
               <div className="flex justify-center">
-                <img
-                  src="/LogoDark.png"
-                  alt="Mark Twelve Logo"
-                  className="max-w-[200px]  w-full"
-                />
+                <ThemedLogo className="max-w-[200px] w-full" />
               </div>
             </div>
           </div>

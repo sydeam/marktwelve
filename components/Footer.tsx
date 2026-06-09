@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { Instagram } from 'lucide-react'
+import { Instagram, Linkedin } from 'lucide-react'
 import { useTheme } from 'next-themes'
 
 export default function Footer() {
@@ -30,9 +30,9 @@ export default function Footer() {
                 <Image
                   src={logoSrc}
                   alt="Mark Twelve"
-                  width={100}
-                  height={34}
-                  className="h-7 w-auto opacity-90"
+                  width={105}
+                  height={36}
+                  className="h-[36px] w-auto opacity-90"
                 />
               ) : (
                 <div className="h-7 w-24" />
@@ -55,6 +55,16 @@ export default function Footer() {
                 style={{ color: 'var(--ash)' }}
               >
                 <Instagram size={16} />
+              </a>
+              <a
+                href="https://www.linkedin.com/company/marktwelve"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Mark Twelve on LinkedIn"
+                className="footer-social transition-colors"
+                style={{ color: 'var(--ash)' }}
+              >
+                <Linkedin size={16} />
               </a>
             </div>
           </div>

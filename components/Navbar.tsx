@@ -83,9 +83,9 @@ export default function Navbar() {
               <Image
                 src={logoSrc}
                 alt="Mark Twelve"
-                width={120}
-                height={40}
-                className="h-8 w-auto object-contain"
+                width={126}
+                height={42}
+                className="h-[40px] w-auto object-contain"
                 priority
               />
             ) : (
@@ -177,9 +177,9 @@ export default function Navbar() {
               <Image
                 src={logoSrc}
                 alt="Mark Twelve"
-                width={120}
-                height={40}
-                className="h-8 w-auto"
+                width={126}
+                height={42}
+                className="h-[34px] w-auto"
               />
             )}
           </Link>
