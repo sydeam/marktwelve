@@ -4,7 +4,7 @@ import { ArrowRight } from 'lucide-react'
 import { services } from './service-data'
 
 export const metadata: Metadata = {
-  title: 'Services | Full-Spectrum Digital Growth - Mark Twelve',
+  title: 'Services | Full Spectrum Digital Growth | Mark Twelve',
   description:
     'Video production, digital marketing, branding, and photography for brands ready to leave a lasting mark.',
   alternates: { canonical: 'https://marktwelve.in/services' },
@@ -25,7 +25,7 @@ export default function ServicesPage() {
         <div className="container-narrow relative z-10">
           <div style={{ animation: 'fadeUp 0.8s ease 0.1s both' }}>
             <h1
-              className="font-display font-light tracking-tight leading-none mb-6"
+              className="font-display leading-none mb-6"
               style={{ fontSize: 'clamp(3rem, 7vw, 6rem)', color: 'var(--paper)' }}
             >
               Services That

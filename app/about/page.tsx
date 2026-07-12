@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'About | Clarity Over Noise — Mark Twelve',
+  title: 'About | Clarity Over Noise | Mark Twelve',
   description:
     'Mark Twelve was born from a desire for rigorous restraint. Learn about our philosophy, our team, and why elite brands partner with us.',
   alternates: { canonical: 'https://marktwelve.in/about' },
@@ -58,7 +58,7 @@ export default function AboutPage() {
       >
         <div className="container-narrow relative z-10">
           <h1
-            className="font-display font-light tracking-tight leading-none"
+            className="font-display leading-none"
             style={{
               fontSize: 'clamp(2.75rem, 6.5vw, 5.5rem)',
               animation: 'fadeUp 0.8s ease 0.1s both',
@@ -131,7 +131,7 @@ export default function AboutPage() {
                   style={{ color: 'var(--smoke)', fontSize: '0.9375rem' }}
                 >
                   Mark Twelve was established on a singular premise: the most powerful brands are
-                  those that whisper, rather than shout. We sit at the intersection of high-fashion
+                  those that whisper, rather than shout. We sit at the intersection of high fashion
                   editorialism and strategic marketing discipline, crafting digital experiences that
                   demand undeniable quality rather than clamor.
                 </p>
@@ -140,7 +140,7 @@ export default function AboutPage() {
                   style={{ color: 'var(--smoke)', fontSize: '0.9375rem' }}
                 >
                   Our founders, veterans of legacy luxury brand strategy, recognized a void in the
-                  digital landscape — a space where storytelling could be unfiltered by conventional
+                  digital landscape, a space where storytelling could be unfiltered by conventional
                   corporate templates. Thus, Mark Twelve emerged as a highly curated atelier for
                   digital brand elevation.
                 </p>

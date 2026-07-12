@@ -2,6 +2,8 @@
 
 import { useEffect, useRef } from 'react'
 
+const interactiveSelector = 'a, button, [role="button"]'
+
 export default function CustomCursor() {
   const dotRef = useRef<HTMLDivElement>(null)
   const ringRef = useRef<HTMLDivElement>(null)
@@ -11,51 +13,43 @@ export default function CustomCursor() {
     const ring = ringRef.current
     if (!dot || !ring) return
 
-    let dotX = 0, dotY = 0
-    let ringX = 0, ringY = 0
-    let raf: number
-
-    const moveCursor = (e: MouseEvent) => {
-      dotX = e.clientX
-      dotY = e.clientY
+    const moveCursor = (event: PointerEvent) => {
+      dot.style.left = `${event.clientX}px`
+      dot.style.top = `${event.clientY}px`
+      ring.style.left = `${event.clientX}px`
+      ring.style.top = `${event.clientY}px`
     }
 
-    const animate = () => {
-      ringX += (dotX - ringX) * 0.15
-      ringY += (dotY - ringY) * 0.15
+    const getInteractiveElement = (target: EventTarget | null) =>
+      target instanceof Element ? target.closest(interactiveSelector) : null
 
-      dot.style.left = `${dotX}px`
-      dot.style.top = `${dotY}px`
-      ring.style.left = `${ringX}px`
-      ring.style.top = `${ringY}px`
-
-      raf = requestAnimationFrame(animate)
+    const handlePointerOver = (event: PointerEvent) => {
+      if (getInteractiveElement(event.target)) ring.classList.add('hovered')
     }
 
-    const addHover = () => ring.classList.add('hovered')
-    const removeHover = () => ring.classList.remove('hovered')
+    const handlePointerOut = (event: PointerEvent) => {
+      const from = getInteractiveElement(event.target)
+      const to = getInteractiveElement(event.relatedTarget)
+      if (from && from !== to) ring.classList.remove('hovered')
+    }
 
-    document.addEventListener('mousemove', moveCursor)
-    document.querySelectorAll('a, button, [role="button"]').forEach((el) => {
-      el.addEventListener('mouseenter', addHover)
-      el.addEventListener('mouseleave', removeHover)
-    })
+    const handlePointerDown = () => ring.classList.add('pressed')
+    const handlePointerUp = () => ring.classList.remove('pressed')
 
-    raf = requestAnimationFrame(animate)
-
-    // Observe DOM for dynamically added interactive elements
-    const observer = new MutationObserver(() => {
-      document.querySelectorAll('a, button, [role="button"]').forEach((el) => {
-        el.addEventListener('mouseenter', addHover)
-        el.addEventListener('mouseleave', removeHover)
-      })
-    })
-    observer.observe(document.body, { childList: true, subtree: true })
+    document.addEventListener('pointermove', moveCursor, { passive: true })
+    document.addEventListener('pointerover', handlePointerOver)
+    document.addEventListener('pointerout', handlePointerOut)
+    document.addEventListener('pointerdown', handlePointerDown)
+    document.addEventListener('pointerup', handlePointerUp)
+    document.addEventListener('pointercancel', handlePointerUp)
 
     return () => {
-      document.removeEventListener('mousemove', moveCursor)
-      cancelAnimationFrame(raf)
-      observer.disconnect()
+      document.removeEventListener('pointermove', moveCursor)
+      document.removeEventListener('pointerover', handlePointerOver)
+      document.removeEventListener('pointerout', handlePointerOut)
+      document.removeEventListener('pointerdown', handlePointerDown)
+      document.removeEventListener('pointerup', handlePointerUp)
+      document.removeEventListener('pointercancel', handlePointerUp)
     }
   }, [])
 

@@ -9,21 +9,7 @@ interface ProcessCardProps {
 export function ProcessCard({ step, title, desc }: ProcessCardProps) {
   return (
     <div
-      className="group relative p-8 border border-white/10 transition-all duration-300 cursor-pointer"
-      style={{
-        background: 'rgba(12, 12, 12, 0.5)',
-        backdropFilter: 'blur(10px)',
-      }}
-      onMouseEnter={(e) => {
-        e.currentTarget.style.borderColor = 'var(--signal)';
-        e.currentTarget.style.background = 'rgba(200, 75, 48, 0.08)';
-        e.currentTarget.style.boxShadow = '0 0 20px rgba(200, 75, 48, 0.15)';
-      }}
-      onMouseLeave={(e) => {
-        e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.1)';
-        e.currentTarget.style.background = 'rgba(12, 12, 12, 0.5)';
-        e.currentTarget.style.boxShadow = 'none';
-      }}
+      className="process-card group relative p-8 border border-white/10 cursor-pointer"
     >
       <p
         className="mb-4 text-xs tracking-[0.2em] font-medium transition-colors duration-300 group-hover:text-signal"
@@ -53,17 +39,7 @@ export function ProcessCard({ step, title, desc }: ProcessCardProps) {
         {desc}
       </p>
 
-      {/* Hover accent line */}
-      <div
-        className="absolute bottom-0 left-0 h-1 bg-signal transition-all duration-500"
-        style={{ width: '0%' }}
-        onMouseEnter={(e) => {
-          e.currentTarget.style.width = '100%';
-        }}
-        onMouseLeave={(e) => {
-          e.currentTarget.style.width = '0%';
-        }}
-      />
+      <div className="process-card-accent" aria-hidden="true" />
     </div>
   );
 }

@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { ThemeProvider } from 'next-themes'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
-// import ExitIntentBanner from '@/components/ExitIntentBanner'
+import ExitIntentBanner from '@/components/ExitIntentBanner'
 import WhatsAppFloat from '@/components/WhatsAppFloat'
 import CustomCursor from '@/components/CustomCursor'
 import '../styles/globals.css'
@@ -33,20 +33,20 @@ export const metadata: Metadata = {
     siteName: 'Mark Twelve',
     title: 'Mark Twelve | Premium Digital Marketing Agency in Hyderabad',
     description:
-      'Precision and high-value curation. We architect digital experiences for elite brands.',
+      'Precision and high value curation. We architect digital experiences for elite brands.',
     images: [
       {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Mark Twelve — Precision Digital Marketing Agency',
+        alt: 'Mark Twelve Precision Digital Marketing Agency',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Mark Twelve | Premium Digital Marketing Agency',
-    description: 'Precision and high-value curation. Digital experiences for elite brands.',
+    description: 'Precision and high value curation. Digital experiences for elite brands.',
     images: ['/og-image.jpg'],
   },
   robots: {
@@ -127,7 +127,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Hanken+Grotesk:wght@300;400;500;600&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600&family=Sora:wght@300;400;500;600;700&display=swap"
           rel="stylesheet"
         />
         <script

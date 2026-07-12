@@ -38,10 +38,10 @@ export default function Footer() {
                 <div className="h-7 w-24" />
               )}
               <p
-                className="text-xs tracking-widest uppercase"
+                className="text-xs tracking-widest"
                 style={{ color: 'var(--smoke)', fontFamily: 'var(--font-body)' }}
               >
-                Precision and high-value curation.
+                Video production | Digital Marketing | Branding
               </p>
             </div>
 
@@ -77,7 +77,7 @@ export default function Footer() {
               className="text-xs"
               style={{ color: 'var(--smoke)', fontFamily: 'var(--font-body)' }}
             >
-              © 2025 Mark Twelve. Precision and high-value curation.
+              © 2025 Mark Twelve. Precision and high value curation.
             </p>
 
             <nav aria-label="Footer navigation">

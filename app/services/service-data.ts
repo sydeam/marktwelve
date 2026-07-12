@@ -65,7 +65,7 @@ export const services: ServiceData[] = [
     shortIntro:
       'Cinematic founder stories, commercial films, and sharp social assets built to stop the scroll.',
     heroDescription:
-      'We do not just capture frames; we capture momentum. From raw founder documentaries to high-definition commercial ad films, we build the visual assets and sharp social hooks that stop the scroll and turn passive viewers into brand believers.',
+      'We do not just capture frames; we capture momentum. From raw founder documentaries to high definition commercial ad films, we build the visual assets and sharp social hooks that stop the scroll and turn passive viewers into brand believers.',
     icon: Film,
     offerings: [
       {
@@ -77,13 +77,13 @@ export const services: ServiceData[] = [
       {
         title: 'Commercial Ad Films',
         description:
-          'We produce high-end, concept-driven commercial films that capture the raw essence of your brand, engineered to turn passive scrollers into immediate paying customers.',
+          'We produce high end, concept driven commercial films that capture the raw essence of your brand, engineered to turn passive scrollers into immediate paying customers.',
         icon: Video,
       },
       {
         title: 'Social Asset Engines',
         description:
-          'We engineer high-velocity, beautifully graded vertical videos built on sharp psychological hooks and seamless pacing to keep your brand completely omnipresent across digital feeds.',
+          'We engineer high velocity, beautifully graded vertical videos built on sharp psychological hooks and seamless pacing to keep your brand completely omnipresent across digital feeds.',
         icon: Share2,
       },
     ],
@@ -91,7 +91,7 @@ export const services: ServiceData[] = [
       heading: 'Built for brands that need attention with weight.',
       body:
         'Your visual content should not feel like another asset in a calendar. It should move the market, clarify the founder story, and give every campaign a premium visual spine.',
-      points: ['Cinematic direction', 'Performance-led hooks', 'Social-first edits'],
+      points: ['Cinematic direction', 'Performance led hooks', 'Social first edits'],
     },
     process: [
       {
@@ -112,7 +112,7 @@ export const services: ServiceData[] = [
       {
         step: '04',
         title: 'Post & Distribution Assets',
-        desc: 'We edit, grade, package, and adapt the final film into platform-ready assets built for attention.',
+        desc: 'We edit, grade, package, and adapt the final film into platform ready assets built for attention.',
       },
     ],
     cta: {
@@ -125,15 +125,15 @@ export const services: ServiceData[] = [
     slug: 'Digital-Marketing',
     name: 'Digital Mark',
     shortIntro:
-      'Data-driven performance frameworks across search and social channels that move the right audience.',
+      'Data driven performance frameworks across search and social channels that move the right audience.',
     heroDescription:
-      'Distribution is everything, and vanity metrics are a waste of time. We deploy smart, data-driven performance marketing frameworks across search and social channels to stamp your message directly in front of the audience that moves the needle.',
+      'Distribution is everything, and vanity metrics are a waste of time. We deploy smart, data driven performance marketing frameworks across search and social channels to stamp your message directly in front of the audience that moves the needle.',
     icon: Target,
     offerings: [
       {
         title: 'Performance Marketing',
         description:
-          'We construct, manage, and scale highly targeted, data-backed ad campaigns across Google and Meta platforms that position your brand directly in front of active buyers.',
+          'We construct, manage, and scale highly targeted, data backed ad campaigns across Google and Meta platforms that position your brand directly in front of active buyers.',
         icon: BarChart3,
       },
       {
@@ -145,7 +145,7 @@ export const services: ServiceData[] = [
       {
         title: 'Conversion Optimization',
         description:
-          'From high-converting website landing pages to seamless user journeys, we analyze and optimize every digital customer touchpoint to ensure your entire marketing budget converts flawlessly.',
+          'From high converting website landing pages to seamless user journeys, we analyze and optimize every digital customer touchpoint to ensure your entire marketing budget converts flawlessly.',
         icon: Gauge,
       },
     ],
@@ -153,7 +153,7 @@ export const services: ServiceData[] = [
       heading: 'Focused on qualified demand, not vanity motion.',
       body:
         'We connect media buying, content strategy, landing pages, and conversion intelligence into one operating system for measurable growth.',
-      points: ['Buyer-led targeting', 'Clean reporting', 'Conversion-first funnels'],
+      points: ['Buyer led targeting', 'Clean reporting', 'Conversion first funnels'],
     },
     process: [
       {
@@ -207,7 +207,7 @@ export const services: ServiceData[] = [
       {
         title: 'Billboard Design & Copywriting',
         description:
-          'We conceptualize high-impact out-of-home advertising campaigns, combining striking visuals with razor-sharp, commanding copy for nationwide billboards and large-scale placements designed to capture immediate attention.',
+          'We conceptualize high impact outdoor advertising campaigns, combining striking visuals with razor sharp, commanding copy for nationwide billboards and large scale placements designed to capture immediate attention.',
         icon: FileText,
       },
     ],
@@ -236,7 +236,7 @@ export const services: ServiceData[] = [
       {
         step: '04',
         title: 'Rollout System',
-        desc: 'We package the identity into practical digital, print, pitch, and campaign-ready assets.',
+        desc: 'We package the identity into practical digital, print, pitch, and campaign ready assets.',
       },
     ],
     cta: {
@@ -251,25 +251,25 @@ export const services: ServiceData[] = [
     shortIntro:
       'Premium portraits, product frames, and campaign imagery that sharpen every brand touchpoint.',
     heroDescription:
-      'We do not just take pictures, we capture your brand premium identity. From high-end corporate portraits to cinematic product frames, we deliver sharp, pristine visual assets that elevate your marketing material and command instant consumer respect across all mediums.',
+      'We do not just take pictures, we capture your brand premium identity. From high end corporate portraits to cinematic product frames, we deliver sharp, pristine visual assets that elevate your marketing material and command instant consumer respect across all mediums.',
     icon: Camera,
     offerings: [
       {
         title: 'Corporate & Executive Portraits',
         description:
-          'We style, direct, and shoot premium, high-contrast portraits of founders and leadership teams, engineered to instantly project authority, trust, and boardroom-ready professionalism.',
+          'We style, direct, and shoot premium, high contrast portraits of founders and leadership teams, engineered to instantly project authority, trust, and boardroom ready professionalism.',
         icon: User,
       },
       {
         title: 'Commercial Product Photography',
         description:
-          'We capture the high-definition textures, raw ingredients, and sleek packaging details of your products, creating pristine, magazine-quality assets optimized for e-commerce, brochures, and digital storefronts.',
+          'We capture the high definition textures, raw ingredients, and sleek packaging details of your products, creating pristine, magazine quality assets optimized for ecommerce, brochures, and digital storefronts.',
         icon: PackageCheck,
       },
       {
         title: 'Campaign & Editorial Shoots',
         description:
-          'We conceptualize and execute high-concept visual lookbooks and creative lifestyle imagery, providing your brand with the raw aesthetic firepower needed for billboards, lookbooks, and print advertisements.',
+          'We conceptualize and execute high concept visual lookbooks and creative lifestyle imagery, providing your brand with the raw aesthetic firepower needed for billboards, lookbooks, and print advertisements.',
         icon: Sparkles,
       },
     ],
@@ -325,7 +325,7 @@ export const closingSections = [
     eyebrow: 'Our Work',
     title: 'See the marks already made.',
     body:
-      'Explore campaigns, visual systems, and growth work shaped for brands that needed more than surface-level marketing.',
+      'Explore campaigns, visual systems, and growth work shaped for brands that needed more than surface level marketing.',
     href: '/portfolio',
     cta: 'View Our Work',
     icon: BadgeCheck,

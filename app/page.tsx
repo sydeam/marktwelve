@@ -9,7 +9,6 @@ import {
   Instagram,
   Target,
   Camera,
-  Sparkles,
   Film,
   Gem,
 } from 'lucide-react'
@@ -28,14 +27,14 @@ const services = [
     title: 'Video Mark',
     category: 'Video Production',
     slug: 'Video-Mark',
-    desc: 'We don\'t just capture frames; we capture momentum. From raw founder documentaries to high-definition commercial ad films, we build the visual assets and sharp social hooks that stop the scroll.',
+    desc: 'We don\'t just capture frames; we capture momentum. From raw founder documentaries to high definition commercial ad films, we build the visual assets and sharp social hooks that stop the scroll.',
   },
   {
     icon: Target,
     title: 'Digital Mark',
     category: 'Digital Marketing',
     slug: 'Digital-Marketing',
-    desc: 'Distribution is everything, and vanity metrics are a waste of time. We deploy smart, data-driven performance marketing frameworks that stamp your message in front of the audience that moves the needle.',
+    desc: 'Distribution is everything, and vanity metrics are a waste of time. We deploy smart, data driven performance marketing frameworks that stamp your message in front of the audience that moves the needle.',
   },
   {
     icon: Gem,
@@ -49,7 +48,7 @@ const services = [
     title: 'Photography Mark',
     category: 'Photography',
     slug: 'Photography-Mark',
-    desc: 'We don\'t just take pictures, we capture your brand\'s premium identity. From high-end corporate portraits to cinematic product frames, we deliver sharp, pristine visual assets that command instant respect.',
+    desc: 'We don\'t just take pictures, we capture your brand\'s premium identity. From high end corporate portraits to cinematic product frames, we deliver sharp, pristine visual assets that command instant respect.',
   },
 ]
 
@@ -66,8 +65,8 @@ const process = [
   },
   {
     step: '03',
-    title: 'The In-House Integration',
-    desc: 'This never feels like outsourcing. We plug directly into your vision to operate as your dedicated in-house team.',
+    title: 'The Integrated Team',
+    desc: 'This never feels like outsourcing. We plug directly into your vision to operate as your dedicated internal team.',
   },
   {
     step: '04',
@@ -76,21 +75,30 @@ const process = [
   },
 ]
 
-const cases = [
+const useCases = [
   {
-    title: 'Mansion House',
-    category: 'Performance Marketing',
-    industry: 'Food & Beverages',
+    title: 'Launch Demand',
+    eyebrow: 'Food and Beverage',
+    challenge: 'Turn a new product story into qualified attention before the first campaign fatigue sets in.',
+    approach: 'A compact launch system with hero film cuts, founder led narrative, paid media angles, and conversion ready landing content.',
+    outcome: 'A sharper first impression and a cleaner path from social attention to sales conversations.',
+    services: ['Video Mark', 'Digital Mark'],
   },
   {
-    title: 'Naked Fruits',
-    category: 'Video Production',
-    industry: 'Food & Beverages',
+    title: 'Premium Repositioning',
+    eyebrow: 'Lifestyle Brands',
+    challenge: 'Move from busy content output to a brand world that feels considered, memorable, and commercially useful.',
+    approach: 'Visual identity refinement, campaign language, product photography, and a tighter rhythm for social storytelling.',
+    outcome: 'A stronger premium signal across every touchpoint, from profile to pitch deck to performance creative.',
+    services: ['Branding Mark', 'Photography Mark'],
   },
   {
-    title: 'Hyderabad School Of Hair and Beauty',
-    category: 'Video Production, Performance Marketing',
-    industry: 'Education & Training',
+    title: 'Trust Building',
+    eyebrow: 'Education and Training',
+    challenge: 'Make expertise visible for buyers who need proof before they ever speak to the team.',
+    approach: 'Authority led videos, testimonial assets, search ready content, and performance campaigns built around clear proof points.',
+    outcome: 'More confident inquiries from an audience that understands the value before the first call.',
+    services: ['Video Mark', 'Digital Mark', 'Branding Mark'],
   },
 ]
 
@@ -119,9 +127,9 @@ export default function HomePage() {
               style={{
                 fontSize: 'clamp(2.75rem, 7vw, 5.2rem)',
                 color: 'var(--paper)',
-                fontWeight: 300,
+                fontWeight: 500,
                 lineHeight: 1.05,
-                letterSpacing: '-0.02em',
+                letterSpacing: 0,
                 animation: 'fadeUp 0.8s ease-out 0.25s both',
               }}
             >
@@ -159,9 +167,14 @@ export default function HomePage() {
 
             {/* CTA */}
             <div style={{ animation: 'fadeUp 0.8s ease-out 0.55s both' }}>
-              <Link href="/contact" className="btn-primary">
-                Take the Challenge
-                <ArrowRight size={16} strokeWidth={2.5} />
+              <Link href="/contact" className="btn-challenge">
+                <span className="btn-challenge-icon" aria-hidden="true">
+                  <Target size={17} strokeWidth={2.2} />
+                </span>
+                <span>Take the Challenge</span>
+                <span className="btn-challenge-arrow" aria-hidden="true">
+                  <ArrowRight size={16} strokeWidth={2.5} />
+                </span>
               </Link>
             </div>
           </div>
@@ -190,7 +203,7 @@ export default function HomePage() {
               style={{
                 color: 'var(--paper)',
                 fontSize: 'clamp(1.25rem, 2.4vw, 2rem)',
-                fontWeight: 300,
+                fontWeight: 400,
               }}
             >
               A lasting mark isn&apos;t built by chasing trends,
@@ -207,7 +220,7 @@ export default function HomePage() {
                 className="uppercase tracking-[0.2em] text-xs"
                 style={{ color: 'var(--signal)' }}
               >
-                - Satya Gayathri
+                Satya Gayathri
               </p>
 
               <p
@@ -249,7 +262,7 @@ export default function HomePage() {
                 lineHeight: 1.8,
               }}
             >
-              We don&apos;t do pre-packaged boxes.
+              We don&apos;t do packaged boxes.
               What we build depends entirely on your current
               goals and where your story needs to go.
             </p>
@@ -377,67 +390,120 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* CASES */}
+      {/* USE CASES */}
       <section className="section-pad" style={{ background: 'var(--void)' }}>
         <div className="container-narrow">
-          <div className="flex items-end justify-between mb-16 flex-wrap gap-6">
-            <div>
+          <div className="grid lg:grid-cols-[0.82fr_1.18fr] gap-14 lg:gap-20 items-start">
+            <div className="lg:sticky lg:top-28">
+              <p
+                className="uppercase tracking-[0.18em] text-xs mb-4"
+                style={{ color: 'var(--signal)' }}
+              >
+                Use Cases
+              </p>
               <h2
-                className="font-display mb-4"
+                className="font-display mb-6"
                 style={{
                   fontSize: 'clamp(2rem, 4vw, 3.6rem)',
                   color: 'var(--paper)',
-                  lineHeight: 1.05,
+                  lineHeight: 1.08,
                 }}
               >
-                Selected Cases
+                Where the Mark Twelve system works hardest.
               </h2>
 
-              <p style={{ color: 'var(--smoke)' }}>
-                Stories that left a lasting mark.
+              <p
+                className="mb-8"
+                style={{ color: 'var(--smoke)', lineHeight: 1.8, maxWidth: '440px' }}
+              >
+                Every engagement is shaped around the business moment. Launches need speed,
+                repositioning needs taste, and trust building needs proof people can feel before a call.
               </p>
+
+              <Link href="/portfolio" className="btn-outline">
+                View Our Work
+              </Link>
             </div>
 
-            <Link href="/work" className="btn-outline">
-              View All Work
-            </Link>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-6">
-            {cases.map((item) => (
-              <Link
-                key={item.title}
-                href="/work"
-                className="portfolio-card block"
-              >
-                <div
-                  className="dark-img-placeholder aspect-[4/5]"
-                  style={{ marginBottom: '1.5rem' }}
-                />
-
-                <p
-                  className="uppercase tracking-[0.18em] text-xs mb-3"
-                  style={{ color: 'var(--signal)' }}
+            <div className="space-y-5">
+              {useCases.map((item, index) => (
+                <article
+                  key={item.title}
+                  className="use-case-card border border-white/10 p-6 md:p-8"
+                  style={{ background: index % 2 === 0 ? 'var(--pitch)' : 'rgba(26,26,26,0.62)' }}
                 >
-                  {item.industry}
-                </p>
+                  <div className="grid md:grid-cols-[120px_1fr] gap-6">
+                    <div>
+                      <p
+                        className="font-display mb-4"
+                        style={{ color: 'var(--signal)', fontSize: '2rem', lineHeight: 1 }}
+                      >
+                        {String(index + 1).padStart(2, '0')}
+                      </p>
+                      <p
+                        className="uppercase tracking-[0.16em] text-xs"
+                        style={{ color: 'var(--smoke)' }}
+                      >
+                        {item.eyebrow}
+                      </p>
+                    </div>
 
-                <h3
-                  className="font-display mb-3"
-                  style={{
-                    color: 'var(--paper)',
-                    fontSize: '1.55rem',
-                    lineHeight: 1.15,
-                  }}
-                >
-                  {item.title}
-                </h3>
+                    <div>
+                      <h3
+                        className="font-display mb-5"
+                        style={{ color: 'var(--paper)', fontSize: 'clamp(1.45rem, 2.4vw, 2rem)', lineHeight: 1.16 }}
+                      >
+                        {item.title}
+                      </h3>
 
-                <p style={{ color: 'var(--smoke)' }}>
-                  {item.category}
-                </p>
-              </Link>
-            ))}
+                      <div className="grid sm:grid-cols-3 gap-5 mb-6">
+                        <div>
+                          <p className="uppercase tracking-[0.14em] text-xs mb-2" style={{ color: 'var(--signal)' }}>
+                            Need
+                          </p>
+                          <p style={{ color: 'var(--smoke)', fontSize: '0.92rem', lineHeight: 1.7 }}>
+                            {item.challenge}
+                          </p>
+                        </div>
+                        <div>
+                          <p className="uppercase tracking-[0.14em] text-xs mb-2" style={{ color: 'var(--signal)' }}>
+                            Move
+                          </p>
+                          <p style={{ color: 'var(--smoke)', fontSize: '0.92rem', lineHeight: 1.7 }}>
+                            {item.approach}
+                          </p>
+                        </div>
+                        <div>
+                          <p className="uppercase tracking-[0.14em] text-xs mb-2" style={{ color: 'var(--signal)' }}>
+                            Result
+                          </p>
+                          <p style={{ color: 'var(--smoke)', fontSize: '0.92rem', lineHeight: 1.7 }}>
+                            {item.outcome}
+                          </p>
+                        </div>
+                      </div>
+
+                      <div className="flex flex-wrap gap-2">
+                        {item.services.map((service) => (
+                          <span
+                            key={service}
+                            className="text-xs"
+                            style={{
+                              color: 'var(--paper)',
+                              border: '1px solid rgba(255,255,255,0.12)',
+                              padding: '0.42rem 0.65rem',
+                              background: 'rgba(255,255,255,0.03)',
+                            }}
+                          >
+                            {service}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -464,7 +530,7 @@ export default function HomePage() {
             className="max-w-2xl mx-auto mb-12"
             style={{ color: 'var(--smoke)' }}
           >
-            Follow our visual stories, campaigns, and behind-the-scenes moments.
+            Follow our visual stories, campaigns, and behind the scenes moments.
           </p>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
@@ -482,56 +548,52 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* INTERACTIVE FORM */}
+      {/* LEAD FORM */}
       <section className="section-pad" style={{ background: 'var(--void)' }}>
         <div className="container-narrow max-w-4xl">
-          <h2
-            className="font-display mb-6"
-            style={{
-              fontSize: 'clamp(1.8rem, 3.2vw, 3rem)',
-              color: 'var(--paper)',
-              lineHeight: 1.08,
-            }}
-          >
-            We&apos;d love to hear from you.
-            <br />
-            (it&apos;ll only take a sec)
-          </h2>
-
-          <div
-            className="mt-12 border border-white/10 p-8 md:p-12"
-            style={{ background: 'var(--pitch)' }}
-          >
-            <div className="grid md:grid-cols-[1fr_auto] gap-12 items-start">
+          <div className="lead-form-panel">
+            <div className="lead-form-layout">
               <div>
-                <p
-                  className="leading-[2.8]"
+                <h2
+                  className="font-display mb-6"
                   style={{
+                    fontSize: 'clamp(1.8rem, 3.2vw, 3rem)',
                     color: 'var(--paper)',
-                    fontSize: 'clamp(1rem, 1.8vw, 1.12rem)',
+                    lineHeight: 1.08,
                   }}
                 >
-                  Hello/Hii,
-                  <br />
-                  Your name is
-                  <input className="inline-input" />.
-                  An email we can contact you at is
-                  <input className="inline-input" />.
-                  The company you associate with is called
-                  <input className="inline-input" />.
-                  If you know what your mark should look like,
-                  it would be
-                  <input className="inline-input large" />.
-                </p>
+                  We&apos;d love to hear from you.
+                </h2>
 
-                <button className="btn-primary mt-10">
-                  Send Message
-                </button>
-              </div>
+                <form id="lead-contact-form" className="lead-conversation" action="/contact" method="get">
+                  <div className="lead-conversation-fields">
+                    <div className="lead-conversation-row">
+                      <label htmlFor="lead-name">Hello, I&apos;m</label>
+                      <input id="lead-name" name="name" placeholder="your name" required />
+                    </div>
+                    <div className="lead-conversation-row">
+                      <label htmlFor="lead-email">You can reach me at</label>
+                      <input id="lead-email" name="email" type="email" placeholder="your@email.com" required />
+                    </div>
+                    <div className="lead-conversation-row">
+                      <label htmlFor="lead-company">I&apos;m with</label>
+                      <input id="lead-company" name="company" placeholder="your company" />
+                    </div>
+                    <div className="lead-conversation-row">
+                      <label htmlFor="lead-mark">I&apos;d like my mark to feel</label>
+                      <input id="lead-mark" name="mark" placeholder="distinctly mine" required />
+                    </div>
+                  </div>
 
-              <div className="flex justify-center">
-                <ThemedLogo className="max-w-[200px] w-full" />
+                </form>
               </div>
+              <ThemedLogo className="lead-form-logo" />
+            </div>
+            <div className="lead-form-submit">
+              <button className="btn-primary" type="submit" form="lead-contact-form">
+                Send Message
+                <ArrowRight size={16} strokeWidth={2.5} />
+              </button>
             </div>
           </div>
         </div>
@@ -560,7 +622,7 @@ export default function HomePage() {
             }}
           >
             To be honest, it&apos;s our founder&apos;s birth date.
-            Beyond that, it&apos;s also the universal rhythm of completeness -
+            Beyond that, it&apos;s also the universal rhythm of completeness:
             the months in a year, the hours on a clock,
             the geometry of a perfect circle.
             <br />
