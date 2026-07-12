@@ -58,49 +58,109 @@ body {
   word-spacing: 0.035em;
   transition: var(--transition-theme);
   overflow-x: hidden;
-  cursor: none;
+  cursor: auto;
 }
 
 /* =============================================
    CUSTOM CURSOR
    ============================================= */
 
-.cursor-dot {
-  width: 8px;
-  height: 8px;
-  background: var(--paper);
-  border-radius: 50%;
+.brand-cursor {
   position: fixed;
+  left: 0;
+  top: 0;
+  width: 42px;
+  height: 42px;
   pointer-events: none;
   z-index: 9999;
+  opacity: 0;
   transform: translate(-50%, -50%);
-  transition: transform 0.15s ease, background-color 0.2s ease;
+  transition: opacity 0.18s ease;
+  will-change: left, top, opacity;
 }
 
-.cursor-ring {
-  width: 32px;
-  height: 32px;
-  border: 1px solid var(--ash);
+.brand-cursor.is-visible {
+  opacity: 1;
+}
+
+.brand-cursor__glow {
+  position: absolute;
+  inset: 6px;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(200, 75, 48, 0.22), rgba(200, 75, 48, 0) 72%);
+  filter: blur(10px);
+  opacity: 0.75;
+  transform: scale(0.82);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.brand-cursor__mark {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: var(--signal);
+  filter: drop-shadow(0 0 10px rgba(200, 75, 48, 0.24));
+  transform: scale(0.92) rotate(-7deg);
+  transform-origin: center;
+  transition: transform 0.2s ease, color 0.2s ease, filter 0.2s ease;
+}
+
+.brand-cursor__mark svg {
+  width: 30px;
+  height: 30px;
+  overflow: visible;
+}
+
+.brand-cursor__hotspot {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 4px;
+  height: 4px;
+  background: var(--paper);
   border-radius: 50%;
-  position: fixed;
-  pointer-events: none;
-  z-index: 9998;
+  box-shadow: 0 0 0 3px rgba(12, 12, 12, 0.55);
   transform: translate(-50%, -50%);
-  transition: width 0.16s ease, height 0.16s ease, border-color 0.16s ease, background-color 0.16s ease, box-shadow 0.16s ease;
 }
 
-.cursor-ring.hovered {
-  width: 44px;
-  height: 44px;
-  border-color: var(--signal);
-  background: rgba(200, 75, 48, 0.08);
-  box-shadow: 0 0 0 6px rgba(200, 75, 48, 0.08);
+.brand-cursor.is-hovered .brand-cursor__glow {
+  opacity: 1;
+  transform: scale(1.12);
 }
 
-.cursor-ring.pressed {
-  width: 24px;
-  height: 24px;
-  background: rgba(200, 75, 48, 0.22);
+.brand-cursor.is-hovered .brand-cursor__mark {
+  color: var(--signal-hover);
+  filter: drop-shadow(0 0 14px rgba(224, 90, 58, 0.36));
+  transform: scale(1.08) rotate(-4deg);
+}
+
+.brand-cursor.is-pressed .brand-cursor__glow {
+  transform: scale(0.92);
+}
+
+.brand-cursor.is-pressed .brand-cursor__mark {
+  transform: scale(0.84) rotate(-3deg);
+}
+
+html:not(.has-custom-cursor) .cursor-none {
+  cursor: auto !important;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  html.has-custom-cursor *,
+  html.has-custom-cursor *::before,
+  html.has-custom-cursor *::after {
+    cursor: none !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brand-cursor,
+  .brand-cursor__glow,
+  .brand-cursor__mark {
+    transition-duration: 0.01ms;
+  }
 }
 
 /* =============================================
