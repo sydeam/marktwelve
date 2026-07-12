@@ -23,7 +23,7 @@ export default function ContactPage() {
       >
         <div className="container-narrow relative z-10">
           <h1
-            className="font-display font-light tracking-tight leading-none mb-7"
+            className="font-display leading-none mb-7"
             style={{
               fontSize: 'clamp(2.75rem, 6.5vw, 5.5rem)',
               color: 'var(--paper)',
@@ -41,7 +41,7 @@ export default function ContactPage() {
               animation: 'fadeUp 0.8s ease 0.25s both',
             }}
           >
-            Tell us what your mark should look like — and win our hearts. We&apos;ll get back to you faster than you think.
+            Tell us what your mark should look like and win our hearts. We&apos;ll get back to you faster than you think.
           </p>
         </div>
       </section>

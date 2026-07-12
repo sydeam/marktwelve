@@ -115,7 +115,7 @@ export default function ExitIntentBanner() {
                 lineHeight: 1.15,
                 color: isDark ? '#F5F0F0' : '#0C0C0C',
                 marginBottom: '1.25rem',
-                letterSpacing: '-0.02em',
+                letterSpacing: 0,
               }}
             >
               Every great brand started

@@ -4,7 +4,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 
-const categories = ['ALL WORK', 'REAL ESTATE', 'E-COMMERCE', 'CLINICS', 'STARTUPS']
+const categories = ['ALL WORK', 'REAL ESTATE', 'ECOMMERCE', 'CLINICS', 'STARTUPS']
 
 const projects = [
   {
@@ -19,9 +19,9 @@ const projects = [
   {
     id: 2,
     name: 'Noir Botanica',
-    label: 'E-COMMERCE',
-    cat: 'E-COMMERCE',
-    desc: 'D2C brand elevation through editorial product photography and conversion-first store architecture.',
+    label: 'ECOMMERCE',
+    cat: 'ECOMMERCE',
+    desc: 'D2C brand elevation through editorial product photography and conversion first store architecture.',
     gradient: 'linear-gradient(160deg, #1a1210 0%, #0c0c0c 60%, #1a1210 100%)',
     size: 'small',
   },
@@ -64,7 +64,7 @@ export default function PortfolioPage() {
       >
         <div className="container-narrow relative z-10 text-center">
           <h1
-            className="font-display font-light tracking-tight leading-none mb-6"
+            className="font-display leading-none mb-6"
             style={{
               fontSize: 'clamp(3rem, 7vw, 5.5rem)',
               color: 'var(--paper)',
@@ -82,7 +82,7 @@ export default function PortfolioPage() {
               animation: 'fadeUp 0.8s ease 0.25s both',
             }}
           >
-            Precision and high-value curation for an elite clientele. We engineer digital presences
+            Precision and high value curation for an elite clientele. We engineer digital presences
             that command authority through architectural clarity and ruthless subtraction.
           </p>
         </div>
@@ -200,7 +200,7 @@ export default function PortfolioPage() {
                   textTransform: 'uppercase',
                 }}
               >
-                — Featured Case Study
+                Featured Case Study
               </p>
               <h2
                 className="font-display mb-6"
@@ -216,9 +216,9 @@ export default function PortfolioPage() {
                 className="font-body mb-8 leading-relaxed"
                 style={{ color: 'var(--smoke)', fontSize: '0.9375rem', maxWidth: '420px' }}
               >
-                For Aura E-Commerce, we dismantled the conventional, noisy digital storefront. By
+                For Aura Ecommerce, we dismantled the conventional, noisy digital storefront. By
                 enforcing strict architectural grids and relying entirely on tonal layering, we
-                created a browsing experience that mimics a private viewing room in a high-end
+                created a browsing experience that mimics a private viewing room in a high end
                 gallery.
               </p>
 
@@ -275,7 +275,7 @@ export default function PortfolioPage() {
               >
                 Read Full Study
                 <span className="transition-transform group-hover:translate-x-1" style={{ display: 'inline-block' }}>
-                  →
+                  <ArrowRight size={12} />
                 </span>
               </Link>
             </div>

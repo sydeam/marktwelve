@@ -71,7 +71,7 @@ export default function Navbar() {
             : 'bg-transparent'
         }`}
       >
-        <nav className="container-narrow flex items-center justify-between h-16 md:h-20">
+        <nav className="container-narrow flex items-center justify-between h-20 md:h-24">
           
           {/* Logo */}
           <Link
@@ -83,13 +83,13 @@ export default function Navbar() {
               <Image
                 src={logoSrc}
                 alt="Mark Twelve"
-                width={120}
-                height={40}
-                className="h-8 w-auto object-contain"
+                width={189}
+                height={63}
+                className="h-[60px] w-auto object-contain"
                 priority
               />
             ) : (
-              <div className="h-8 w-32" />
+              <div className="h-[60px] w-[180px]" />
             )}
           </Link>
 
@@ -105,9 +105,9 @@ export default function Navbar() {
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className={`transition-all duration-300 text-m font-medium ${
+                      className={`nav-link transition-all duration-300 text-m font-medium ${
                         isActive
-                          ? 'text-white'
+                          ? 'active text-white'
                           : 'text-gray-400 hover:text-white'
                       }`}
                     >
@@ -171,15 +171,15 @@ export default function Navbar() {
         }`}
       >
         {/* Mobile Top */}
-        <div className="container-narrow flex items-center justify-between h-16">
+        <div className="container-narrow flex items-center justify-between h-20">
           <Link href="/">
             {mounted && (
               <Image
                 src={logoSrc}
                 alt="Mark Twelve"
-                width={120}
-                height={40}
-                className="h-8 w-auto"
+                width={189}
+                height={63}
+                className="h-[51px] w-auto"
               />
             )}
           </Link>

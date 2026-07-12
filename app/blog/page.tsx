@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'The Intelligence | Brand Strategy Insights — Mark Twelve',
+  title: 'The Intelligence | Brand Strategy Insights | Mark Twelve',
   description:
     'Insights on brand strategy, digital authority, content marketing, and the art of elite positioning from the Mark Twelve team.',
   alternates: { canonical: 'https://marktwelve.in/blog' },
@@ -23,7 +23,7 @@ const posts = [
     cat: 'CONTENT MARKETING',
     title: 'Why Your Content Strategy Is Your Most Undervalued Asset',
     excerpt:
-      'Editorial-grade content that positions your brand as the definitive authority rather than another voice in the noise.',
+      'Editorial grade content that positions your brand as the definitive authority rather than another voice in the noise.',
     date: 'April 2025',
     gradient: 'linear-gradient(145deg, #101418 0%, #0c0c0c 55%, #101418 100%)',
   },
@@ -32,7 +32,7 @@ const posts = [
     cat: 'EXECUTIVE PRESENCE',
     title: 'From Invisible to Authority: The LinkedIn Transformation Framework',
     excerpt:
-      'How C-suite leaders transform their digital presence from passive observer to magnetic industry luminary in 90 days.',
+      'How C suite leaders transform their digital presence from passive observer to magnetic industry luminary in 90 days.',
     date: 'March 2025',
     gradient: 'linear-gradient(160deg, #141414 0%, #0c0c0c 55%, #181414 100%)',
   },
@@ -41,7 +41,7 @@ const posts = [
     cat: 'DIGITAL STRATEGY',
     title: 'Precision Over Volume: Why We Reject Vanity Metrics',
     excerpt:
-      'The sophisticated case for quality signals over impression counts — and why the brands that win obsess over depth, not reach.',
+      'The sophisticated case for quality signals over impression counts, and why the brands that win obsess over depth, not reach.',
     date: 'February 2025',
     gradient: 'linear-gradient(150deg, #101418 0%, #0c0c0c 55%, #0e1018 100%)',
   },
@@ -61,7 +61,7 @@ export default function BlogPage() {
       >
         <div className="container-narrow relative z-10">
           <h1
-            className="font-display font-light tracking-tight leading-none mb-5"
+            className="font-display leading-none mb-5"
             style={{
               fontSize: 'clamp(3rem, 7vw, 5.5rem)',
               color: 'var(--paper)',
@@ -157,7 +157,7 @@ export default function BlogPage() {
                         color: 'var(--smoke)',
                       }}
                     >
-                      Read More →
+                      Read More
                     </span>
                   </div>
                 </Link>

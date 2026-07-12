@@ -30,7 +30,7 @@ export function ServiceDetailPage({ service }: ServiceDetailPageProps) {
             </p>
 
             <h1
-              className="font-display font-light tracking-tight leading-none mb-8"
+              className="font-display leading-none mb-8"
               style={{
                 fontSize: 'clamp(3rem, 7vw, 6rem)',
                 color: 'var(--paper)',

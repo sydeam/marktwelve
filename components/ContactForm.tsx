@@ -68,7 +68,7 @@ export default function ContactForm() {
           We heard you.
         </h3>
         <p style={{ color: 'var(--smoke)', fontFamily: 'var(--font-body)', maxWidth: '340px' }}>
-          We review every message personally. Expect a response soon — we move fast.
+          We review every message personally. Expect a response soon. We move fast.
         </p>
       </div>
     )
@@ -172,7 +172,7 @@ export default function ContactForm() {
         >
           Text us on WhatsApp
         </a>{' '}
-        — you&apos;ll be redirected instantly.
+        and you&apos;ll be redirected instantly.
       </p>
     </form>
   )

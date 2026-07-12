@@ -4,7 +4,7 @@ import { ArrowRight } from 'lucide-react'
 import { services } from './service-data'
 
 export const metadata: Metadata = {
-  title: 'Services | Full-Spectrum Digital Growth - Mark Twelve',
+  title: 'Services | Full Spectrum Digital Growth | Mark Twelve',
   description:
     'Video production, digital marketing, branding, and photography for brands ready to leave a lasting mark.',
   alternates: { canonical: 'https://marktwelve.in/services' },
@@ -13,6 +13,7 @@ export const metadata: Metadata = {
 export default function ServicesPage() {
   return (
     <>
+      {/* ── Hero ── */}
       <section
         className="grain relative"
         style={{
@@ -24,7 +25,7 @@ export default function ServicesPage() {
         <div className="container-narrow relative z-10">
           <div style={{ animation: 'fadeUp 0.8s ease 0.1s both' }}>
             <h1
-              className="font-display font-light tracking-tight leading-none mb-6"
+              className="font-display leading-none mb-6"
               style={{ fontSize: 'clamp(3rem, 7vw, 6rem)', color: 'var(--paper)' }}
             >
               Services That
@@ -48,6 +49,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
+      {/* ── Service Cards ── */}
       <section className="section-pad" style={{ background: 'var(--void)' }}>
         <div className="container-narrow">
           <div className="max-w-3xl mb-16">
@@ -73,69 +75,82 @@ export default function ServicesPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {services.map(({ slug, icon: Icon, name, shortIntro, offerings }, index) => (
-              <article key={slug} className="service-card flex flex-col">
-                <div className="flex items-start justify-between mb-6">
-                  <Icon size={20} style={{ color: 'var(--signal)' }} aria-hidden="true" />
-                  <span
-                    className="font-body tabular-nums"
-                    style={{ fontSize: '0.75rem', color: 'var(--ash)', letterSpacing: '0.1em' }}
-                  >
-                    {String(index + 1).padStart(2, '0')}
+              <Link
+                key={slug}
+                href={`/services/${slug}`}
+                className="service-card-hover group block"
+                aria-label={`Explore ${name}`}
+              >
+                {/*
+                  Overlay layer — starts above the card (translateY -100%)
+                  and slides down to fill on hover (translateY 0%).
+                */}
+                <span className="service-card-overlay" aria-hidden="true">
+                 
                   </span>
-                </div>
-
-                <h2
-                  className="font-display mb-3"
-                  style={{ fontSize: '1.75rem', color: 'var(--paper)' }}
-                >
-                  {name}
-                </h2>
-                <p
-                  className="font-body mb-6 flex-1"
-                  style={{ color: 'var(--smoke)', fontSize: '0.875rem', lineHeight: 1.65 }}
-                >
-                  {shortIntro}
-                </p>
-
-                <ul className="space-y-2 mb-8">
-                  {offerings.map((offering) => (
-                    <li
-                      key={offering.title}
-                      className="flex items-start gap-2 font-body"
-                      style={{ color: 'var(--smoke)', fontSize: '0.8125rem' }}
+                {/* All content sits above the overlay via z-index */}
+                <span className="service-card-content flex flex-col h-full">
+                  {/* Header row */}
+                  <span className="flex items-start justify-between mb-6">
+                    <span className="service-card-icon transition-transform duration-300 group-hover:translate-y-[-3px]">
+                      <Icon size={20} aria-hidden="true" />
+                    </span>
+                    <span
+                      className="font-body tabular-nums service-card-index"
+                      style={{ fontSize: '0.75rem', letterSpacing: '0.1em' }}
                     >
-                      <span style={{ color: 'var(--signal)', marginTop: '1px', flexShrink: 0 }}>
-                        +
-                      </span>
-                      {offering.title}
-                    </li>
-                  ))}
-                </ul>
-
-                <Link
-                  href={`/services/${slug}`}
-                  className="font-body flex items-center gap-2 cursor-none group"
-                  style={{
-                    fontSize: '0.75rem',
-                    letterSpacing: '0.1em',
-                    textTransform: 'uppercase',
-                    color: 'var(--smoke)',
-                  }}
-                >
-                  Explore Service
-                  <span
-                    className="transition-transform group-hover:translate-x-1"
-                    style={{ display: 'inline-block' }}
-                  >
-                    <ArrowRight size={13} />
+                      {String(index + 1).padStart(2, '0')}
+                    </span>
                   </span>
-                </Link>
-              </article>
+
+                  {/* Title */}
+                  <span
+                    className="font-display service-card-title block mb-3"
+                    style={{ fontSize: '1.75rem' }}
+                  >
+                    {name}
+                  </span>
+
+                  {/* Short intro */}
+                  <span
+                    className="font-body service-card-body block mb-6 flex-1"
+                    style={{ fontSize: '0.875rem', lineHeight: 1.65 }}
+                  >
+                    {shortIntro}
+                  </span>
+
+                  {/* Offering list */}
+                  <ul className="space-y-2 mb-8">
+                    {offerings.map((offering) => (
+                      <li
+                        key={offering.title}
+                        className="flex items-start gap-2 font-body service-card-body"
+                        style={{ fontSize: '0.8125rem' }}
+                      >
+                        <span className="service-card-plus" style={{ marginTop: '1px', flexShrink: 0 }}>
+                          +
+                        </span>
+                        {offering.title}
+                      </li>
+                    ))}
+                  </ul>
+
+                  {/* Arrow indicator — navigational cue, not a button */}
+                  <span className="flex items-center gap-2 font-body service-card-cta"
+                    style={{ fontSize: '0.75rem', letterSpacing: '0.1em', textTransform: 'uppercase' }}
+                  >
+                    <span className="transition-transform duration-300 group-hover:translate-x-1 inline-block">
+                     
+                    </span>
+                  </span>
+                </span>
+              </Link>
             ))}
           </div>
         </div>
       </section>
 
+      {/* ── CTA ── */}
       <section className="section-pad" style={{ background: 'var(--pitch)' }}>
         <div className="container-narrow text-center">
           <h2
