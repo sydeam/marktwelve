@@ -18,7 +18,7 @@ const projects = [
   },
   {
     id: 2,
-    name: 'Noir Botanica',
+    name: 'Noir Botanicas',
     label: 'ECOMMERCE',
     cat: 'ECOMMERCE',
     desc: 'D2C brand elevation through editorial product photography and conversion first store architecture.',
